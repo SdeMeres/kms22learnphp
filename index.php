@@ -1,10 +1,14 @@
 <?php
-$sum = 0;
-for($i=1;$i<1000;$i++){
-    if($i%3 === 0) {
-        $sum += $i;
-    } else if($i%5 === 0){
-        $sum += $i;
-    }
-}
-var_dump($sum);
+$bool = true && true;
+var_dump($bool);
+$bool = true && false;
+var_dump($bool);
+$bool = false && false;
+var_dump($bool);
+$bool = false || true;
+var_dump($bool);
+$bool = !false;
+var_dump($bool);
+$bool = false || true && true || !false;
+var_dump($bool);
+$bool = true;
