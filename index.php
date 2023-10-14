@@ -1,8 +1,13 @@
 <?php
+$a=0;
+$b=1;
 $sum = 0;
-for($i=1;$i<1000;$i++){
-    if($i%3 === 0 || $i%5 === 0) {
-        $sum += $i;
+while($b<4_000_000){
+    $temp = $b;
+    $b += $a;
+    $a = $temp;
+    if($b%2 === 0){
+        $sum +=$b;
     }
 }
 var_dump($sum);
