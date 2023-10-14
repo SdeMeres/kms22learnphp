@@ -1,31 +1,29 @@
 <?php
 
-class Job {
-    public function work(Logger $logger){
-        for($i=0; $i<10; $i++){
-            $logger->log($i);
-        }
+class Box {
+    public $width;
+    public static $count = 0;
+
+    public static function getCount() {
+        var_dump(static::$count);
+        
+    }
+    public function getWidth(){
+        var_dump(static::$count);
+        self::getCount();
+        var_dump($this->width);
     }
 }
 
-class ConsoleLogger implements Logger {
-    public function log($text){
-        echo $text . "\n";
-    }
+class MetalBox extends Box {
+    public static $count = 5;
 }
 
-interface Logger {
-    public function log($text);
-}
-
-// kasutaja kood 
-class NothingLogger implements Logger {
-    public function log($text){
-
-    }
-}
-
-$job = new Job();
-$logger = new ConsoleLogger();
-
-$job->work($logger);
+MetalBox::getCount();
+Box::getCount();
+Box::$count = 1;
+Box::$count = 2;
+var_dump(Box::$count);
+var_dump(Box::$count);
+$box = new Box();
+$box->getWidth();
