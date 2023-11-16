@@ -1,8 +1,5 @@
-<?php
-    $name = 'Kaspar';
-    $list = ['sai', 'leib', 'piim', 'viin'];
-?>
 <?php include 'partials/header.php' ?>
+
     <h1>Hello <?=$name?></h1>
     <ul>
         <?php foreach($list as $element): ?>
