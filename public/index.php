@@ -1,9 +1,8 @@
 <?php
 
-
-
 spl_autoload_register(function ($class){
     $class = substr($class, 4);
+    $class = str_replace('\\', '/', $class);
     require_once __DIR__ . "/../src/$class.php";
 });
 

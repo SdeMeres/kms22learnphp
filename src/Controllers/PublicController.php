@@ -1,10 +1,11 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\Article;
+
 class PublicController {
     public function index(){
-        $name = 'Kaspar';
-        $list = ['sai', 'leib', 'piim', 'viin'];
+        $articles = Article::all();
         include 'views/index.php';
     }
 
