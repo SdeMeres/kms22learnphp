@@ -4,10 +4,13 @@ use App\Controllers\ArticlesController;
 use App\Controllers\PublicController;
 use App\Router;
 
-Router::addRoute('/', [PublicController::class, 'index']);
+Router::get('/', [PublicController::class, 'index']);
 
-Router::addRoute('/about', [PublicController::class, 'about']);
+Router::get('/about', [PublicController::class, 'about']);
 
-Router::addRoute('/contacts', [PublicController::class, 'contacts']);
+Router::get('/contacts', [PublicController::class, 'contacts']);
 
-Router::addRoute('/articles', [ArticlesController::class, 'index']);
+Router::get('/admin/articles', [ArticlesController::class, 'index']);
+
+Router::get('/admin/articles/new', [ArticlesController::class, 'create']);
+Router::post('/admin/articles', [ArticlesController::class, 'store']);
