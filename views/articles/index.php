@@ -13,9 +13,9 @@
                     <td><?=$article->title?></td>
                     <td class="text-end">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a class="btn btn-info">View</a>
-                        <a class="btn btn-warning">Edit</a>
-                        <a class="btn btn-danger">Delete</a>
+                        <a class="btn btn-info" href="/admin/articles/show?id=<?=$article->id?>">View</a>
+                        <a class="btn btn-warning" href="/admin/articles/edit?id=<?=$article->id?>">Edit</a>
+                        <a class="btn btn-danger" href="/admin/articles/delete?id=<?=$article->id?>">Delete</a>
                     </div>
                     </td>
                 </tr>
