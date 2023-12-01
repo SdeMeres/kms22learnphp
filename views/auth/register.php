@@ -1,5 +1,10 @@
 <?php include 'views/partials/header.php' ?>
 <form action="/register" method="POST">
+    <?php if(isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger" role="alert">
+            <?=$_SESSION['error']?>
+        </div>
+    <?php endif ?>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Email" name="email">

@@ -8,6 +8,8 @@ spl_autoload_register(function ($class){
 
 session_start(['cookie_httponly' => true]);
 
+unset($_SESSION['hasErrors']);
+
 require_once __DIR__ . '/../helpers.php';
 require_once __DIR__ . '/../routes.php';
 
@@ -26,4 +28,7 @@ if($match){
 } else {
     http_response_code(404);
     include 'views/404.php';
+}
+if(!isset($_SESSION['hasErrors'])){
+    unset($_SESSION['error']);
 }

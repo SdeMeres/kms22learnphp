@@ -16,6 +16,8 @@ class AuthController {
             $user->save();
             header('Location: /login');
         } else {
+            $_SESSION['error'] = 'passwords do not match';
+            $_SESSION['hasErrors'] = true;
             header('Location: /register');
         }
         
