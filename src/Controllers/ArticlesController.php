@@ -6,6 +6,12 @@ use App\Models\Article;
 
 class ArticlesController {
 
+    public function __construct(){
+        if(!auth()){
+            header('Location: /login');
+        }
+    }
+
     public function index(){
         $articles = Article::all();
         include 'views/articles/index.php';
