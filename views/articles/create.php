@@ -1,4 +1,4 @@
-<?php include 'views/partials/header.php' ?>
+<?php include __DIR__ . '/../partials/header.php' ?>
 <form action="/admin/articles" method="POST">
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>

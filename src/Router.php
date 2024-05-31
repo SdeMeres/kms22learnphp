@@ -15,10 +15,14 @@ class Router {
 
     public function match(){
         foreach(self::$routes as $route){
-            if($route['path'] === $this->path && $route['method'] === $this->method){
+            $routePattern = preg_replace('/\{([a-zA-Z]+)\}/', '([a-zA-Z0-9_\-]+)', $route['path']);
+            if (preg_match("#^{$routePattern}$#", $this->path, $matches) && $route['method'] === $this->method) {
+                array_shift($matches); // Remove the full match
+                $route['params'] = $matches;
                 return $route;
             }
         }
+        return null;
     }
 
     public static function addRoute($method, $path, $action){

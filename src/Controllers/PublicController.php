@@ -6,7 +6,7 @@ use App\Models\Article;
 class PublicController {
     public function index(){
         $articles = Article::all();
-        include 'views/index.php';
+        include __DIR__ .'/../../views/index.php';
     }
 
     public function about(){
