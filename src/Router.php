@@ -17,7 +17,7 @@ class Router {
         foreach(self::$routes as $route){
             $routePattern = preg_replace('/\{([a-zA-Z]+)\}/', '([a-zA-Z0-9_\-]+)', $route['path']);
             if (preg_match("#^{$routePattern}$#", $this->path, $matches) && $route['method'] === $this->method) {
-                array_shift($matches); // Remove the full match
+                array_shift($matches);
                 $route['params'] = $matches;
                 return $route;
             }

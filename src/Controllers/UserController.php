@@ -22,7 +22,7 @@ class UserController {
     }
 
     public function edit($id) {
-        $user = User::find($id);  // Use the $id parameter
+        $user = User::find($id);
         if ($user) {
             include __DIR__ . '/../../views/users/edit.php';
         } else {
